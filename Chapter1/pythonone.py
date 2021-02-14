@@ -2,7 +2,7 @@
 
 import pandas
 import datetime
-import os 
+import os
 import logging
 import boto3
 from botocore.exceptions import ClientError
@@ -15,14 +15,13 @@ def get_current_directory():
         print("This the current directory of code :" + path + ".")
     except:
         print("Not able to get the current working directory")
-        
+
 def change_directory():
     try:
         print("Changing to working directory :" + os.chdir(workdir) +".")
     except:
         print("Not able to change to working directory defined")
-        
-        
+
 def describe_aws_account(region,profile):
     try:
         s3 = boto3.resource('s3')
@@ -33,8 +32,7 @@ def describe_aws_account(region,profile):
             print(f'{bucket["Name"]}')
     except:
         print("No S3 Buckets were found")
-        
-        
+
 def create_bucket(bucket_name,region=None):
     try:
         if region is None:
@@ -44,12 +42,12 @@ def create_bucket(bucket_name,region=None):
             s3_client=boto3.client('s3',region_name=region)
             location={'LocationConstraint':region}
             s3_client.create_bucket(Bucket=bucket_name,CreateBucketConfiguration=location)
-            
+
     except ClientError as e:
         logging.error(e)
         return False
     return True
-        
+
 if __name__ == "__main__":
     change_directory()
     get_current_directory()
