@@ -1,2 +1,2 @@
-# Python-for-Data-Analysts
-Python for Data Analysts
+# Python-for-DevOps
+Python for DevOps
