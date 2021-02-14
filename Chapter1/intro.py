@@ -110,3 +110,7 @@ input.lstrip() '''This will remove the left side space of input string'''
 input.rstrip() '''This will remove the right side space of input string'''
 
 
+# Using shell type Substitute
+from string import Template
+greeting = Template("$hello Navaneeth Reddy")
+greeting.substitute(hello="Bonjour")
