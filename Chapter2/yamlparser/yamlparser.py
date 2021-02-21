@@ -12,8 +12,7 @@ def yamlreadfromfile():
 def yamlwritetofile():
     ''' This method will write the yaml to a file and print it in formatted way'''
     with open('playbook-write.yaml', 'w') as yamlfile:
-        ansibleplaybook = yaml.safe_load(yamlfile)
-        pprint(ansibleplaybook)
+        yaml.dump(playbook-write, yamlfile)
 
 
 if __name__ == '__main__':

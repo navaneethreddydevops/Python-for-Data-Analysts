@@ -13,9 +13,7 @@ def readjsonfromfile():
 def writejsontofile():
     '''This Method will write the parsed the JSON to a file'''
     with open('policy-write.json', 'w') as iam_policy:
-        policy = json.dumps(json.load(iam_policy))
-        pprint(policy)
-
+        policy = json.dump(policy,iam_policy)
 
 if __name__ == '__main__':
     readjsonfromfile()
