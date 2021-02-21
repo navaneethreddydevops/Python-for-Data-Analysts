@@ -33,6 +33,12 @@ def describe_aws_account(region,profile):
     except:
         print("No S3 Buckets were found")
 
+def positioning(first,second):
+    """This method will print the positional arguments"""
+    print(f"This is the first argument:{first}")
+    print(f"This is the second argument:{second}")
+
+
 def create_bucket(bucket_name,region=None):
     try:
         if region is None:
@@ -51,5 +57,6 @@ def create_bucket(bucket_name,region=None):
 if __name__ == "__main__":
     change_directory()
     get_current_directory()
+    positioning(1,35)
     describe_aws_account("us-east-1","default")
     create_bucket("my-custom-cloud-bucket","us-east-1")
