@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": "ec2:deleteInstances",
+        "Resource": "*",
+        "Condition": {
+            "DateGreaterThan": {
+                "aws:CurrentTime": "2012-10-17T00:00:00Z"
+            },
+            "DateLesserThan": {
+                "aws:CurrentTime": "2017-12-31T23:59:59Z"
+            }
+        }
+    }
+}
