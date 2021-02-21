@@ -9,3 +9,19 @@
       yum:
         name: httpd
         state: latest
+    - name: write the apache configuration
+      notify:
+        - restart
+        - apache
+      template:
+        dest:
+          /etc/httpd.conf
+        src:
+          /srv/httpd.j2
+    - name: ensure apache is running
+      service:
+        name: httpd
+        state: started
+  vars:
+    http_port: 80
+    max_clients: 200
