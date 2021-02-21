@@ -11,3 +11,8 @@ df -h
 import datetime
 print(datetime.datetime.now().time())
 ```
+
+This will print out the loaded values of memory
+```
+%who
+```
