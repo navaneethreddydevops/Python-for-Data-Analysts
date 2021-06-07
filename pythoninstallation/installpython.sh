@@ -9,5 +9,4 @@ python_installer() {
   pip 3.7 install --upgrade pip
 EOF
 }
-
 python_installer
